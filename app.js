@@ -15,6 +15,7 @@ function listen() {
 }
 //----
 app.post("/api/nodemail", cors(), (req, res) => {
+  console.log(req.body);
   let { name_, gmail_, subject_, comments_ } = req.body;
 
   let html = `
