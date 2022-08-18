@@ -3,6 +3,7 @@ const nodemailer = require("nodemailer");
 const express = require("express");
 const app = express();
 const port = process.env.PORT || "1000";
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const Euser = "helpline.ilmulislam@gmail.com";
