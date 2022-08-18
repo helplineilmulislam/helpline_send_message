@@ -20,6 +20,7 @@ app.post("/api/nodemail", cors(), (req, res) => {
   let { name_, gmail_, subject_, comments_ } = req.body;
 
   function resp(dt) {
+    console.log(dt);
     res.json({ done: dt });
   }
 
