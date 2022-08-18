@@ -51,7 +51,8 @@ app.post("/api/nodemail", cors(), (req, res) => {
         }
       });
   } catch (error) {
-    res.json({ error: error.message, done: 0 });
+    console.log(error);
+    res.json({ done: 0 });
   }
 });
 //----
