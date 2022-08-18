@@ -5,6 +5,7 @@ const app = express();
 const port = process.env.PORT || "1000";
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 const Euser = "helpline.ilmulislam@gmail.com";
 const Epass = "dapyxzswsmrnneak";
@@ -15,7 +16,7 @@ function listen() {
   console.log(`listening on port: ${port}`);
 }
 //----
-app.post("/api/nodemail", cors(), (req, res) => {
+app.post("/api/nodemail", (req, res) => {
   console.log(req.body);
   let { name_, gmail_, subject_, comments_ } = req.body;
 
