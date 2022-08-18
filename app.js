@@ -19,6 +19,10 @@ app.post("/api/nodemail", cors(), (req, res) => {
   console.log(req.body);
   let { name_, gmail_, subject_, comments_ } = req.body;
 
+  function resp(dt) {
+    res.json({ done: dt });
+  }
+
   let html = `
     <div>
         <span style="color: #303030;font-size: 24px;">Subject: ${subject_}</span>
@@ -48,12 +52,12 @@ app.post("/api/nodemail", cors(), (req, res) => {
         if (err) {
           throw Error(err);
         } else {
-          res.json({ done: 1 });
+          resp(1);
         }
       });
   } catch (error) {
     console.log(error);
-    res.json({ done: 0 });
+    resp(0);
   }
 });
 //----
