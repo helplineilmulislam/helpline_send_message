@@ -18,7 +18,7 @@ function listen() {
 //----
 app.post("/api/nodemail", (req, res) => {
   console.log(req.body);
-  let { name_, gmail_, subject_, comments_ } = req.body;
+  let { name_, gmail_, subject_, comments_, car_ } = req.body;
 
   function resp(dt) {
     console.log(dt);
@@ -26,8 +26,15 @@ app.post("/api/nodemail", (req, res) => {
   }
 
   let html = `
+   <style>
+      .heroku_car {
+        color: red;
+      }
+   </style>
     <div>
         <span style="color: #303030;font-size: 24px;">Subject: ${subject_}</span>
+        <br/>
+        <p class="heroku_car">Car name: ${car_}</p>
         <br/>
         <p style="color: #454545;font-size: 20px;"> ${comments_} </p>
         <br/>
